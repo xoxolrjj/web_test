@@ -1,4 +1,5 @@
 import 'package:architecture/app/constants/colors.dart';
+import 'package:architecture/app/widgets/listing_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -38,48 +39,4 @@ class ListingWidget extends StatelessWidget {
   }
 }
 
-class ListingCard extends StatelessWidget {
-  final String image;
-  final String label;
 
-  const ListingCard({required this.image, required this.label});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(10.0),
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(image),
-          fit: BoxFit.cover,
-        ),
-        borderRadius: BorderRadius.only(
-          topRight: Radius.circular(30.0),
-        ),
-      ),
-      child: Stack(
-        children: [
-          Positioned(
-            bottom: 10.0,
-            left: 10.0,
-            child: Text(
-              label,
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: 20.0,
-                shadows: <Shadow>[
-                  Shadow(
-                    offset: Offset(10.0, 10.0),
-                    blurRadius: 3.0,
-                    color: AppColors.black,
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}

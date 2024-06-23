@@ -1,4 +1,5 @@
 import 'package:architecture/presentation/home/controllers/home_binding.dart';
+import 'package:architecture/presentation/home/pages/pre_selling.dart';
 import 'package:architecture/router/route_string.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:get/get_navigation/src/routes/route_middleware.dart';
@@ -20,6 +21,8 @@ appRoutes() => [
       // ),
       GetPage(
           name: RouteString.home, page: () => Home(), binding: HomeBinding()),
+      GetPage(
+          name: RouteString.preslling, page: () => PreSelling(), binding: HomeBinding()),
     ];
 
 class MyMiddleware extends GetMiddleware {

@@ -112,6 +112,9 @@ class Home extends GetView<HomeController> {
               ),
             ),
           ),
+          SizedBox(
+            height: 10.h,
+          ),
 
           Container(
             margin: EdgeInsets.symmetric(horizontal: 55.0),
