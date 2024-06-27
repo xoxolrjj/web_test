@@ -6,7 +6,6 @@ import 'package:architecture/app/constants/strings.dart';
 import 'package:architecture/app/widgets/search_field.dart';
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -73,7 +72,11 @@ class HeroSection extends StatelessWidget {
                 ),
               ),
               Positioned(
-                  bottom: 20, left: 0.0, right: 0.0, child: SearchField(),),
+                bottom: 20,
+                left: 0.0,
+                right: 0.0,
+                child: SearchField(),
+              ),
             ],
           ),
         ),

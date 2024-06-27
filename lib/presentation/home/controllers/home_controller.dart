@@ -16,11 +16,14 @@ class HomeController extends GetxController {
   var selectedLocation = ''.obs;
   var selectedPropertyType = ''.obs;
   var selectedPriceRange = ''.obs;
-  var isForSale = true.obs;
+  var isForSale = 0.obs;
   var isForLease = true.obs;
 
-  void radioSaleLease(value) {
-    isForSale.value = value;
-    isForLease.value = !value;
-  }
+
+  // void radioSaleLease(value) {
+ 
+  //     isForSale.value = value;
+  //     isForLease.value = !value;
+   
+  // }
 }

@@ -1,5 +1,6 @@
 import 'package:architecture/app/constants/colors.dart';
 import 'package:architecture/app/constants/nav_list.dart';
+import 'package:architecture/app/widgets/app_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,7 +12,8 @@ class HeaderDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 100, vertical: 20),
+      padding: const EdgeInsets.all(8.0),
+      margin: EdgeInsets.symmetric(horizontal: 55.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -21,37 +23,44 @@ class HeaderDesktop extends StatelessWidget {
             fit: BoxFit.cover,
           ),
           const Spacer(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              for (var i = 0; i < navList.length; i++)
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      navList[i],
-                      style: GoogleFonts.raleway(
-                          color: AppColors.black, fontWeight: FontWeight.bold),
+          Expanded(
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  for (var i = 0; i < navList.length; i++)
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          navList[i],
+                          style: GoogleFonts.raleway(
+                              color: AppColors.black,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
                     ),
-                  ),
-                ),
-            ],
+                ],
+              ),
+            ),
           ),
           const Spacer(),
           Container(
-            padding: EdgeInsets.only(top: 5, bottom: 5),
-            margin: EdgeInsets.symmetric(horizontal: 50),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: AppColors.red,
-            ),
-            child: TextButton(
-              onPressed: () {},
-              child: Text(
-                "AGENT/BROKER LOGIN",
-                style: TextStyle(
-                    color: AppColors.white, fontWeight: FontWeight.bold),
+            child: Container(
+              decoration: BoxDecoration(
+                border: Border.all(color: AppColors.red, width: 5),
+                borderRadius: BorderRadius.circular(10),
+                color: AppColors.red,
+              ),
+              child: TextButton(
+                onPressed: () {},
+                child: FarmerText(
+                  text: 'AGENT/BROKER LOGIN',
+                  color: AppColors.white,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 3.sp,
+                ),
               ),
             ),
           ),
